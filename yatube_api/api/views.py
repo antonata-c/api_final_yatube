@@ -1,17 +1,13 @@
-from http import HTTPStatus
-
 from django.shortcuts import get_object_or_404
-from django.db.utils import IntegrityError
 from rest_framework import viewsets, filters
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.permissions import (IsAuthenticatedOrReadOnly,
                                         IsAuthenticated)
-from rest_framework.response import Response
 
 from .permissions import AuthorOrReadOnly, ReadOnly
 from .serializers import (PostSerializer, GroupSerializer,
                           FollowSerializer, CommentSerializer)
-from posts.models import Post, Group, Follow, Comment, User
+from posts.models import Post, Group, User
 
 
 class BasePermissionViewSet(viewsets.ModelViewSet):
