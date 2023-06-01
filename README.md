@@ -3,6 +3,12 @@
 
 Предоставлен полноценный доступ ко всем функциям социальной сети с помощью отправки запросов на сервер.
 
+### Стек используемых технологий:
+- [Python 3.8](https://python.org)
+- [Django](https://www.djangoproject.com/)
+- [Django REST Framework](https://www.django-rest-framework.org/)
+- [SQLite3](https://docs.python.org/3/library/sqlite3.html)
+***
 # Как запустить проект:
 ##### Для Windows используем:
 ```python
