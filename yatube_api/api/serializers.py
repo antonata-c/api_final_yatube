@@ -22,7 +22,7 @@ class GroupSerializer(serializers.ModelSerializer):
 
 class FollowSerializer(serializers.ModelSerializer):
     user = serializers.SlugRelatedField(
-        read_only=True,
+        queryset=User.objects.all(),
         slug_field='username',
         default=serializers.CurrentUserDefault()
     )
@@ -41,11 +41,11 @@ class FollowSerializer(serializers.ModelSerializer):
         ]
         model = Follow
 
-    def validate(self, data):
+    def validate_following(self, following):
         request = self.context.get('request')
-        if request and request.user == data.get('following'):
+        if request and request.user == following:
             raise serializers.ValidationError('Самоподписка запрещена.')
-        return data
+        return following
 
 
 class CommentSerializer(serializers.ModelSerializer):
