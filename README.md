@@ -88,3 +88,6 @@ Response: {
 ```python
 http://127.0.0.1:8000/redoc/
 ```
+***
+### Автор работы:
+**[Антон Земцов](https://github.com/antonata-c)**
